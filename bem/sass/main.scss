@@ -1,0 +1,298 @@
+@import "mixins";
+@import "variables";
+
+body {
+  margin:0 auto;
+  font-family: sans-serif;
+}
+
+h1, h2 {
+  font-size:70px;
+  margin: 0;
+  padding: 0;
+   @include mQ(600px){
+    font-size:55px;
+    }
+}
+
+//nav section 
+#mainNav, .links {
+    background-color: #fff;
+    @include mQ(600px){
+    visibility:hidden;
+        }
+    .fa {
+        visibility: visible;
+        font-size:50px;
+        float:right;
+    }
+    .fa {
+       visibility:hidden;
+        padding:10px;
+    }
+    ul {
+       @include clearFix;
+        padding-left:0px;
+        margin:0px;
+        }
+    li {
+        list-style-type: none;
+        float:right;
+        width:(100% / 8);
+
+    }
+    a {
+        font-weight:bold;
+        color: #000;
+        text-decoration: none;
+        padding:25px;
+        display:block;
+        text-align: center;
+        &:hover{ 
+        background:#FF5757;  
+        color:#fff;
+        }
+    }
+}
+//nav end
+
+
+//Kat Doyle header section
+.header, .about {
+    height:100vh;
+}
+
+.header {
+    background-color:#fff;
+    margin-left: 150px;
+    @include mQ(600px){
+        margin:0 8%;
+    }
+  
+  &__section {
+     padding-top: 200px;
+     @include mQ(600px){
+     padding-top:0px;
+        }
+    
+    &__title, &__subtitle {
+      letter-spacing: -8px;
+      font-weight:bold;
+      margin-bottom: -60px;
+      color:#000;
+      font-size:180px;
+      @include mQ(600px){
+      font-size:120px;
+      margin-bottom: -45px;
+        }
+    }
+      &__dot{
+      color: #FF7358;
+    }
+      &__designer {
+          font-size:33px;
+          margin-top:60px;
+          @include mQ(600px){
+          margin-top:50px;
+          font-size:22px;
+        }
+      }
+   }
+} 
+
+
+//About section
+.about {
+   margin: 0 auto;
+   background-color:#fff;
+  
+    &__section {
+       max-width:600px;
+       padding-top:10px;
+       margin-left: 40%;
+        @include mQ(600px){
+            max-width:100%;
+            margin-left:0;
+        }
+        
+     &__circle {
+        position:absolute;
+        margin-left:20%;
+        margin-top:-3%;
+          @include mQ(600px){
+            margin-left:-10%;
+            margin-top:-20%;
+         }
+    }  
+        
+    &__title {
+      margin-left:30%;
+    }
+    
+    &__para {
+    text-align: justify;
+    max-width: 550px;
+    font-size: 18px;
+    line-height: 35px;
+    }
+        
+     ul {
+        float:right;
+        margin-top:-15px;
+        padding:0px;
+    }
+     li {
+         width:80px;
+          display:inline;
+          padding-right:50px;
+    }
+    a {
+        &:hover{ 
+        background:#FF5757; 
+      }
+    }
+  }
+}
+
+
+//portfolio sorting
+.portfolio {
+    &__section{
+        
+    &__squares {
+        position:absolute;
+        margin-left:25%;
+        margin-top:-10%;
+        @include mQ(600px){
+        margin-left:-25%;
+        margin-top:-30%;  
+        }
+        }
+    
+    &__title {
+        text-align:center;
+    }
+    &__sortingNav, ul {
+        margin:0 auto;
+        max-width:400px;
+        list-style-type: none;
+        padding-top:30px;
+        }
+    &__sortingNav, li {
+         font-size:20px;
+          display:inline;
+          padding:10px;
+        }
+  }    
+}
+
+
+//portfolio grid section
+.portfolioImages {
+    &__section {
+        margin:0 auto;
+        max-width:1200px;
+        height:150vh;
+    &__grid, ul{
+         padding:0;
+        }
+
+    &__grid, li {
+    list-style-type: none;
+    @include grid(2, 8%);
+    @include mQ(600px){
+    @include grid(1, 1%);
+        }
+    }
+    &__grid, img { 
+    width: 100%;
+    height: 280px;
+    @include mQ(600px){
+    padding-top:20%;
+        }
+    }   
+  } 
+}
+
+
+//margin MOB
+.header, .about, .portfolioImages, .contact {
+    @include mQ(600px){
+    margin:0 10%; 
+    }
+}
+
+
+//contact
+.contact {
+    &__section {
+        height:70vh;
+        
+    &__c-form {
+        margin: 0 auto;
+        max-width: 800px;
+    }
+        
+    &__title {
+        text-align:center;
+        }
+    input, textarea{
+        width:100%;
+        height:50px;
+        border:1px solid #ccc;
+        font-size:16px;
+        }
+    #name, #email, #phone {
+        width:50%;
+        border:0px;
+        border-bottom: 1px solid #ccc;
+    }
+    #name, #email, #phone, #message{
+        margin-top:30px; 
+    }
+    #phone {
+        width:50%;
+        float:left;
+    }
+    #message {
+        height:150px;
+    }
+    ::placeholder {
+        color: #ccc;
+    }
+}
+
+}
+
+
+//footer icon section
+.footer {
+    &__section{
+  
+    ul {
+        margin:0 auto;
+        max-width:450px;
+        list-style-type: none;
+        }
+    li {
+        display:inline;
+        }
+    img {
+        width:40px;
+        height:50px;
+        margin-bottom:-30px;
+        padding-right:40px;
+        }
+    
+    &__footerBar {
+    width:100%;
+    background-color: #FF5757;
+    height:90px;
+    bottom:0px;
+    @include mQ(600px){
+        margin:0%;
+        }   
+    }
+  }
+}
+  
